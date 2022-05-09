@@ -8,7 +8,7 @@
 ; ヴァ行などをそのまま使いたかったので下駄にあって新下駄に無い配列もそのま」
 ; の改造版
 ;
-; [注意] 
+; [注意]
 ; Ctrl+Esc でスクリプトの停止・再開ができます
 ; Ctrl+F12 でタイピングモードの切り替えができます
 ;=============================
@@ -1070,7 +1070,7 @@ SetInputDef(){
 		kCmb153:=flag_U|flag_H	; ／
 		resultOfKCmb153=【】{Enter}{Left}
 		kCmb155:=flag_H|flag_J	; （）
-		resultOfKCmb155=+8+9{F9}{Enter}{Left}
+		resultOfKCmb155=+9+0{F9}{Enter}{Left}
 		kCmb157:=flag_K|flag_L	; ]
 		resultOfKCmb157=]
 		kCmb158:=flag_K|flag_N	; \
@@ -1176,10 +1176,10 @@ SetInputDef(){
 ;=================================
 ; キーを押し込んでも即座には入力されません
 ; 入力を確定するタイミングは次の２つです
-; 
+;
 ; 1. 次のキーが押されたとき (onKeyDown)
 ; 2. ある程度の時間が経過したとき (確定タイマー)
-; 
+;
 ; 確定タイマーはキーが押されたときにセット/リセットされ、
 ; 入力が確定したときに解除されます
 ; 確定タイマーはonKeyUp ルーチンを呼びます
@@ -1248,7 +1248,7 @@ Return
 
 ^Esc::
 	Suspend,Toggle
-	if(A_IsSuspended = 1) 
+	if(A_IsSuspended = 1)
 	{
 		Menu, Tray, Icon, %A_ScriptDir%\ShinGeta_off.ico , ,1
 	}
@@ -1271,7 +1271,7 @@ u::onKeyDown("_U")
 i::onKeyDown("_I")
 o::onKeyDown("_O")
 p::onKeyDown("_P")
-@::onKeyDown("_AT")
+\::onKeyDown("_AT")
 a::onKeyDown("_A")
 s::onKeyDown("_S")
 d::onKeyDown("_D")
@@ -2085,6 +2085,6 @@ sc033::onKeyDown("_Comma")
 		Else
 		{
 			MsgBox, 新下駄にはないか、ローマ字入力が想定外。
-		}	
+		}
 	}
 Return
